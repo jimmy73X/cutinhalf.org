@@ -1,7 +1,7 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9341704667724928"
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9341704667724928"
      crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-9341704667724928">
     <!-- Google tag (gtag.js) -->
@@ -15,21 +15,23 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cut in Half - Slice Master | Play Free Online Games</title>
-    <meta name="description" content="Play Cut in Half and other slicing games online. Master your slicing skills with our collection of fun physics-based games.">
-    <meta name="keywords" content="cut in half, slice master, slice it all, online games, physics games">
-    <link rel="canonical" href="https://cutinhalf.org">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Play Slice Master on CrazyGames! This fun one-button game challenges you to slice everything in sight while avoiding obstacles and unlocking new blades.">
+    <meta name="keywords" content="Slice Master, online games, one button games, casual gaming, HTML5 games, browser games, high score strategy, slicing game">
+    <link rel="canonical" href="https://cutinhalf.org/">
+    <title>Slice Master: Fun One-Button Game on CrazyGames</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔪</text></svg>">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         'apple-gray': '#F5F5F7',
-                        'apple-blue': '#0071E3',
                         'apple-dark': '#1D1D1F',
-                        'apple-light': '#FAFAFA'
+                        'apple-blue': '#0071E3',
+                        'apple-light-blue': '#2997FF',
+                        'apple-green': '#30D158'
                     }
                 }
             }
@@ -40,581 +42,407 @@
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #f9f9fb 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #f9f9fb 0%, #f0f0f2 100%);
             color: #1d1d1f;
+            min-height: 100vh;
         }
         
         .logo {
             font-weight: 700;
             letter-spacing: -0.5px;
-            background: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+            background: linear-gradient(45deg, #0071E3, #30D158);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
         }
         
-        .game-frame {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
+        .game-container {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-radius: 20px;
             overflow: hidden;
-            border-radius: 16px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            background: #000;
-            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
         }
         
-        .game-frame iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .game-container:hover {
+            transform: translateY(-5px);
+        }
+        
+        .game-iframe {
             width: 100%;
-            height: 100%;
+            height: 500px;
             border: none;
+            background: #000;
         }
         
-        .forum-card {
-            background: white;
-            border-radius: 18px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.03), 0 4px 6px -2px rgba(0, 0, 0, 0.01);
-            border: 1px solid rgba(0,0,0,0.03);
-            transition: all 0.3s ease;
+        .comment-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         
-        .forum-card:hover {
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-            transform: translateY(-2px);
-        }
-        
-        .forum-message {
-            position: relative;
-            border-left: 3px solid #0071E3;
-            transition: all 0.2s;
-        }
-        
-        .forum-message:hover {
-            background-color: rgba(0, 113, 227, 0.03);
-        }
-        
-        .badge {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
+        .comment-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         }
         
         .btn-primary {
-            background: linear-gradient(90deg, #0071E3 0%, #2997FF 100%);
-            color: white;
-            border-radius: 12px;
-            font-weight: 500;
-            transition: all 0.2s;
+            background: linear-gradient(45deg, #0071E3, #2997FF);
+            transition: all 0.3s ease;
         }
         
         .btn-primary:hover {
+            background: linear-gradient(45deg, #0062C4, #0071E3);
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 113, 227, 0.2);
         }
         
-        .feature-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, #e0f3ff 0%, #f0f9ff 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #0071E3;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        
-        .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: #0071E3;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(20px);
+        .btn-secondary {
+            background: linear-gradient(45deg, #30D158, #34C759);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 113, 227, 0.3);
-            z-index: 100;
         }
         
-        .scroll-to-top.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .btn-secondary:hover {
+            background: linear-gradient(45deg, #2BB950, #30A850);
+            transform: translateY(-2px);
         }
         
-        .reply-form {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
+        .forum-container {
+            max-height: 700px;
+            overflow-y: auto;
         }
         
-        .reply-form.active {
-            max-height: 200px;
-        }
-        
-        .nav-link {
-            position: relative;
-            padding-bottom: 5px;
-        }
-        
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #0071E3;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover:after {
-            width: 100%;
+        @media (max-width: 768px) {
+            .game-iframe {
+                height: 300px;
+            }
+            
+            .flex-col-mobile {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
-<body class="min-h-screen">
+<body class="bg-apple-gray">
     <!-- Header -->
-    <header class="bg-white sticky top-0 z-50 shadow-sm">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-pink-500 to-orange-400 flex items-center justify-center">
-                    <i class="fas fa-cut text-white text-xl"></i>
+    <header class="bg-white py-4 px-6 shadow-sm">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-apple-blue to-apple-green flex items-center justify-center mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                    </svg>
                 </div>
                 <h1 class="text-2xl font-bold logo">cutinhalf.org</h1>
             </div>
-            
-            <nav class="hidden md:flex space-x-8">
-                <a href="#game" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Game</a>
-                <a href="#features" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Features</a>
-                <a href="#community" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Community</a>
-                <a href="#games" class="nav-link text-gray-600 hover:text-gray-900 font-medium">More Games</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="text-apple-dark hover:text-apple-blue transition-colors font-medium">Home</a></li>
+                    <li><a href="#" class="text-apple-dark hover:text-apple-blue transition-colors font-medium">Games</a></li>
+                    <li><a href="#" class="text-apple-dark hover:text-apple-blue transition-colors font-medium">About</a></li>
+                    <li><a href="#" class="text-apple-dark hover:text-apple-blue transition-colors font-medium">Contact</a></li>
+                </ul>
             </nav>
-            
-            <div class="flex items-center space-x-4">
-                <button class="hidden sm:block bg-gray-100 hover:bg-gray-200 rounded-full px-4 py-2 text-gray-700 font-medium transition">
-                    <i class="fas fa-gamepad mr-2"></i>Play Now
-                </button>
-                <button class="md:hidden text-gray-600">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="py-12 md:py-20 bg-gradient-to-b from-white to-apple-gray">
-        <div class="container mx-auto px-4 flex flex-col items-center text-center">
-            <div class="flex items-center mb-4">
-                <span class="badge bg-blue-100 text-apple-blue mr-3">NEW</span>
-                <span class="text-gray-600">Physics-based slicing game</span>
-            </div>
-            <h1 class="text-4xl md:text-6xl font-bold max-w-3xl leading-tight mb-6">
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">Slice It All</span> with Cut in Half
-            </h1>
-            <p class="text-xl text-gray-600 max-w-2xl mb-10">
-                Master your slicing skills in this addictive physics puzzle game. Cut objects in half with precision and unlock new challenges!
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Game Title -->
+        <section class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-apple-dark">Slice Master: Fun One-Button Game</h1>
+            <div class="w-24 h-1 bg-gradient-to-r from-apple-blue to-apple-green mx-auto rounded-full mb-6"></div>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Experience the ultimate slicing challenge in this addictive one-button game!</p>
+        </section>
+
+        <!-- Game Introduction -->
+        <section class="mb-12 bg-white rounded-2xl p-6 shadow-sm">
+            <h2 class="text-2xl font-bold mb-4 text-apple-dark">About Slice Master</h2>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+                Play Slice Master on CrazyGames! This fun one-button game challenges you to slice everything in sight while avoiding obstacles and unlocking new blades. 
+                Test your reflexes and precision as you aim for the highest score. With simple controls but challenging gameplay, 
+                Slice Master is perfect for quick gaming sessions or long high-score chasing marathons.
             </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <button class="btn-primary px-8 py-4 text-lg font-semibold">
-                    <i class="fas fa-play mr-2"></i>Play Free Now
-                </button>
-                <button class="bg-white border border-gray-200 text-gray-700 px-8 py-4 text-lg font-semibold rounded-xl hover:bg-gray-50 transition">
-                    <i class="fas fa-star mr-2 text-yellow-400"></i>Top Players
-                </button>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                <div class="bg-apple-gray p-4 rounded-xl flex items-center">
+                    <div class="bg-apple-blue text-white p-3 rounded-lg mr-4">
+                        <i class="fas fa-mouse-pointer text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">One-Button Gameplay</h3>
+                        <p class="text-gray-600 text-sm">Easy to learn, hard to master</p>
+                    </div>
+                </div>
+                <div class="bg-apple-gray p-4 rounded-xl flex items-center">
+                    <div class="bg-apple-green text-white p-3 rounded-lg mr-4">
+                        <i class="fas fa-unlock text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">Unlock New Blades</h3>
+                        <p class="text-gray-600 text-sm">Collect coins to upgrade</p>
+                    </div>
+                </div>
+                <div class="bg-apple-gray p-4 rounded-xl flex items-center">
+                    <div class="bg-purple-500 text-white p-3 rounded-lg mr-4">
+                        <i class="fas fa-trophy text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">Global Leaderboard</h3>
+                        <p class="text-gray-600 text-sm">Compete with players worldwide</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Game Section -->
-    <section id="game" class="py-16">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Play Cut in Half Online</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Experience the thrill of slicing objects with perfect precision. No downloads required!</p>
+        <!-- Game Embed -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-4 text-apple-dark">Play Slice Master Now</h2>
+            <div class="game-container">
+                <div class="relative">
+                    <iframe src="https://1games.io/game/slice-master-3d/" class="game-iframe" allow="fullscreen"></iframe>
+                    <div class="absolute top-4 right-4">
+                        <button class="btn-primary text-white px-4 py-2 rounded-lg font-medium shadow-md flex items-center" onclick="document.querySelector('.game-iframe').requestFullscreen()">
+                            <i class="fas fa-expand mr-2"></i> Fullscreen
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white p-4 flex justify-between items-center">
+                    <div>
+                        <h3 class="font-bold text-lg">Slice Master 3D</h3>
+                        <p class="text-gray-600 text-sm">Provided by CrazyGames</p>
+                    </div>
+                    <div class="flex space-x-2">
+                        <span class="bg-blue-100 text-apple-blue px-3 py-1 rounded-full text-sm font-medium">HTML5</span>
+                        <span class="bg-green-100 text-apple-green px-3 py-1 rounded-full text-sm font-medium">One Button</span>
+                        <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium">3D</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forum Section -->
+        <section class="mb-16">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-apple-dark">Community Forum</h2>
+                <p class="text-gray-600">Share tips, tricks and high scores!</p>
             </div>
             
-            <div class="max-w-5xl mx-auto">
-                <div class="game-frame">
-                    <iframe src="https://1games.io/game/slice-master-3d/" allowfullscreen></iframe>
-                </div>
-                
-                <div class="mt-6 flex flex-wrap justify-center gap-4">
-                    <button class="flex items-center bg-apple-gray px-4 py-2 rounded-lg">
-                        <i class="fas fa-expand mr-2"></i> Fullscreen
-                    </button>
-                    <button class="flex items-center bg-apple-gray px-4 py-2 rounded-lg">
-                        <i class="fas fa-volume-up mr-2"></i> Sound
-                    </button>
-                    <button class="flex items-center bg-apple-gray px-4 py-2 rounded-lg">
-                        <i class="fas fa-share-alt mr-2"></i> Share
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="py-16 bg-apple-gray">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Game Features</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Discover what makes Cut in Half the ultimate slicing experience</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="forum-card p-6 text-center">
-                    <div class="feature-icon mx-auto">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Fast-Paced Gameplay</h3>
-                    <p class="text-gray-600">Quick rounds perfect for short breaks with increasing difficulty levels.</p>
-                </div>
-                
-                <div class="forum-card p-6 text-center">
-                    <div class="feature-icon mx-auto">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Real Physics</h3>
-                    <p class="text-gray-600">Realistic physics engine makes every slice satisfying and unpredictable.</p>
-                </div>
-                
-                <div class="forum-card p-6 text-center">
-                    <div class="feature-icon mx-auto">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Challenges & Rewards</h3>
-                    <p class="text-gray-600">Complete challenges to unlock new blades and special abilities.</p>
-                </div>
-                
-                <div class="forum-card p-6 text-center">
-                    <div class="feature-icon mx-auto">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Global Leaderboards</h3>
-                    <p class="text-gray-600">Compete with players worldwide and climb to the top of the leaderboard.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Community Forum -->
-    <section id="community" class="py-16">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Game Community</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Join the conversation, share tips, and connect with other players</p>
-            </div>
-            
-            <div class="max-w-4xl mx-auto">
-                <!-- Forum Form -->
-                <div class="forum-card p-6 mb-8">
-                    <h3 class="text-xl font-semibold mb-4">Post a Message</h3>
+            <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                <!-- Comment Form -->
+                <div class="p-6 border-b">
+                    <h3 class="text-lg font-bold mb-4">Leave a Comment</h3>
                     <div class="space-y-4">
-                        <div>
-                            <label class="block text-gray-700 mb-2">Name (optional)</label>
-                            <input type="text" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-transparent" placeholder="Your name or nickname">
+                        <div class="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+                            <div class="flex-1">
+                                <label class="block text-gray-700 mb-2">Name</label>
+                                <input type="text" placeholder="Your name (optional)" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-apple-blue focus:border-transparent">
+                            </div>
+                            <div class="flex-1">
+                                <label class="block text-gray-700 mb-2">Title</label>
+                                <input type="text" placeholder="Comment title" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-apple-blue focus:border-transparent">
+                            </div>
                         </div>
                         <div>
-                            <label class="block text-gray-700 mb-2">Message*</label>
-                            <textarea class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-transparent" rows="3" placeholder="Share your thoughts, tips, or questions..."></textarea>
+                            <label class="block text-gray-700 mb-2">Comment</label>
+                            <textarea placeholder="Share your thoughts, tips or high scores..." class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-apple-blue focus:border-transparent h-32"></textarea>
                         </div>
                         <div class="flex justify-between items-center">
-                            <p class="text-sm text-gray-500">Your message will be moderated automatically</p>
-                            <button class="btn-primary px-6 py-3">Post Message</button>
+                            <p class="text-gray-500 text-sm"><i class="fas fa-info-circle mr-1"></i> All comments are moderated</p>
+                            <button class="btn-primary text-white px-6 py-3 rounded-lg font-medium">Post Comment</button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Forum Messages -->
-                <div class="space-y-6" id="forumMessages">
-                    <h3 class="text-2xl font-semibold mb-4">Recent Messages</h3>
+                <!-- Comments List -->
+                <div class="forum-container p-6">
+                    <h3 class="text-lg font-bold mb-4">Recent Comments <span class="text-gray-500 font-normal">(50 shown)</span></h3>
                     
-                    <!-- Message 1 -->
-                    <div class="forum-card p-6 forum-message">
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-white font-bold mr-4">
-                                JS
-                            </div>
-                            <div class="flex-1">
-                                <div class="flex justify-between items-center">
-                                    <h4 class="font-semibold">SliceMaster42</h4>
-                                    <span class="text-sm text-gray-500">2 hours ago</span>
-                                </div>
-                                <p class="mt-2 text-gray-700">Just got a new high score of 2450! The key is to wait until the last moment before slicing to maximize points.</p>
-                                <div class="mt-4 flex space-x-4">
-                                    <button class="text-blue-500 hover:text-blue-700 text-sm flex items-center reply-btn">
-                                        <i class="fas fa-reply mr-1"></i> Reply
-                                    </button>
-                                    <button class="text-gray-500 hover:text-gray-700 text-sm flex items-center">
-                                        <i class="fas fa-thumbs-up mr-1"></i> Like (24)
-                                    </button>
-                                </div>
-                                
-                                <!-- Reply Form (Hidden by default) -->
-                                <div class="reply-form mt-4">
-                                    <div class="pt-4 border-t border-gray-100">
-                                        <textarea class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-transparent" rows="2" placeholder="Write your reply..."></textarea>
-                                        <div class="mt-2 flex justify-end">
-                                            <button class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg mr-2">Cancel</button>
-                                            <button class="btn-primary px-4 py-2">Post Reply</button>
-                                        </div>
+                    <div class="space-y-6">
+                        <!-- Comment 1 -->
+                        <div class="comment-card bg-apple-gray p-5 rounded-xl">
+                            <div class="flex justify-between items-start mb-3">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 rounded-full bg-apple-blue flex items-center justify-center text-white font-bold mr-3">JS</div>
+                                    <div>
+                                        <h4 class="font-bold">JohnSmith</h4>
+                                        <p class="text-gray-500 text-sm">2 hours ago</p>
                                     </div>
                                 </div>
+                                <button class="text-apple-blue hover:text-apple-dark">
+                                    <i class="fas fa-reply"></i>
+                                </button>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Message 2 -->
-                    <div class="forum-card p-6 forum-message">
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white font-bold mr-4">
-                                A
-                            </div>
-                            <div class="flex-1">
-                                <div class="flex justify-between items-center">
-                                    <h4 class="font-semibold">Anonymous</h4>
-                                    <span class="text-sm text-gray-500">5 hours ago</span>
-                                </div>
-                                <p class="mt-2 text-gray-700">Does anyone know how to unlock the laser blade? I've completed level 15 but still haven't got it.</p>
-                                <div class="mt-4 flex space-x-4">
-                                    <button class="text-blue-500 hover:text-blue-700 text-sm flex items-center reply-btn">
-                                        <i class="fas fa-reply mr-1"></i> Reply
-                                    </button>
-                                    <button class="text-gray-500 hover:text-gray-700 text-sm flex items-center">
-                                        <i class="fas fa-thumbs-up mr-1"></i> Like (8)
-                                    </button>
-                                </div>
+                            <h5 class="font-bold text-lg mb-2">Just got 15,000 points!</h5>
+                            <p class="text-gray-700 mb-4">Finally reached 15k after many tries! The key is to focus on the golden fruits - they give 3x points!</p>
+                            <div class="flex items-center text-sm">
+                                <button class="text-apple-blue mr-4 flex items-center">
+                                    <i class="far fa-thumbs-up mr-1"></i> 24
+                                </button>
+                                <button class="text-gray-500 flex items-center">
+                                    <i class="far fa-comment mr-1"></i> Reply
+                                </button>
                             </div>
                         </div>
                         
-                        <!-- Reply 1 -->
-                        <div class="mt-4 ml-14 pl-4 border-l-2 border-gray-200">
-                            <div class="flex items-start">
-                                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center text-white text-xs font-bold mr-3">
-                                    M
-                                </div>
-                                <div class="flex-1">
-                                    <div class="flex justify-between items-center">
-                                        <h4 class="font-semibold text-sm">MasterSlicer</h4>
-                                        <span class="text-xs text-gray-500">3 hours ago</span>
+                        <!-- Comment 2 -->
+                        <div class="comment-card bg-apple-gray p-5 rounded-xl">
+                            <div class="flex justify-between items-start mb-3">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 rounded-full bg-apple-green flex items-center justify-center text-white font-bold mr-3">MG</div>
+                                    <div>
+                                        <h4 class="font-bold">MasterGamer</h4>
+                                        <p class="text-gray-500 text-sm">5 hours ago</p>
                                     </div>
-                                    <p class="mt-1 text-gray-700 text-sm">You need to get at least 3 stars on all levels from 10 to 15. Took me a while too!</p>
                                 </div>
+                                <button class="text-apple-blue hover:text-apple-dark">
+                                    <i class="fas fa-reply"></i>
+                                </button>
+                            </div>
+                            <h5 class="font-bold text-lg mb-2">New blade unlocked!</h5>
+                            <p class="text-gray-700 mb-4">The laser blade is amazing! It cuts through multiple objects at once. Save your coins for this one!</p>
+                            <div class="flex items-center text-sm">
+                                <button class="text-apple-blue mr-4 flex items-center">
+                                    <i class="far fa-thumbs-up mr-1"></i> 42
+                                </button>
+                                <button class="text-gray-500 flex items-center">
+                                    <i class="far fa-comment mr-1"></i> Reply
+                                </button>
+                            </div>
+                            
+                            <!-- Reply -->
+                            <div class="ml-8 mt-4 bg-white p-4 rounded-lg">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div class="flex items-center">
+                                        <div class="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-white text-xs font-bold mr-2">CR</div>
+                                        <div>
+                                            <h4 class="font-bold text-sm">CuttingQueen</h4>
+                                            <p class="text-gray-500 text-xs">1 hour ago</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 text-sm">Totally agree! The laser blade doubled my high score in just three tries. Worth every coin!</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Comment 3 -->
+                        <div class="comment-card bg-apple-gray p-5 rounded-xl">
+                            <div class="flex justify-between items-start mb-3">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold mr-3">NP</div>
+                                    <div>
+                                        <h4 class="font-bold">NewPlayer</h4>
+                                        <p class="text-gray-500 text-sm">1 day ago</p>
+                                    </div>
+                                </div>
+                                <button class="text-apple-blue hover:text-apple-dark">
+                                    <i class="fas fa-reply"></i>
+                                </button>
+                            </div>
+                            <h5 class="font-bold text-lg mb-2">Any tips for beginners?</h5>
+                            <p class="text-gray-700 mb-4">Just started playing yesterday. Any basic strategies I should know? The bombs keep getting me!</p>
+                            <div class="flex items-center text-sm">
+                                <button class="text-apple-blue mr-4 flex items-center">
+                                    <i class="far fa-thumbs-up mr-1"></i> 8
+                                </button>
+                                <button class="text-gray-500 flex items-center">
+                                    <i class="far fa-comment mr-1"></i> Reply
+                                </button>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Message 3 -->
-                    <div class="forum-card p-6 forum-message">
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white font-bold mr-4">
-                                P
-                            </div>
-                            <div class="flex-1">
-                                <div class="flex justify-between items-center">
-                                    <h4 class="font-semibold">PhysicsFan</h4>
-                                    <span class="text-sm text-gray-500">1 day ago</span>
-                                </div>
-                                <p class="mt-2 text-gray-700">Love the realistic physics in this game! The way objects split and fall feels so satisfying. Any other games like this?</p>
-                                <div class="mt-4 flex space-x-4">
-                                    <button class="text-blue-500 hover:text-blue-700 text-sm flex items-center reply-btn">
-                                        <i class="fas fa-reply mr-1"></i> Reply
-                                    </button>
-                                    <button class="text-gray-500 hover:text-gray-700 text-sm flex items-center">
-                                        <i class="fas fa-thumbs-up mr-1"></i> Like (31)
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- View More Button -->
-                <div class="mt-8 text-center">
-                    <button class="bg-white border border-gray-200 text-gray-700 px-6 py-3 font-medium rounded-lg hover:bg-gray-50 transition">
-                        <i class="fas fa-chevron-down mr-2"></i> Load More Messages
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- More Games -->
-    <section id="games" class="py-16 bg-apple-gray">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">More Slicing Games</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Explore other exciting slicing and physics-based games</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="forum-card overflow-hidden">
-                    <div class="h-48 bg-gradient-to-r from-amber-400 to-orange-500"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Fruit Ninja Ultimate</h3>
-                        <p class="text-gray-600 mb-4">Slice flying fruits with your blade and avoid bombs in this classic game.</p>
-                        <button class="text-blue-500 font-medium">Play Now →</button>
-                    </div>
-                </div>
-                
-                <div class="forum-card overflow-hidden">
-                    <div class="h-48 bg-gradient-to-r from-purple-400 to-indigo-500"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Paper Cut Challenge</h3>
-                        <p class="text-gray-600 mb-4">Cut paper into precise shapes to solve challenging puzzles.</p>
-                        <button class="text-blue-500 font-medium">Play Now →</button>
-                    </div>
-                </div>
-                
-                <div class="forum-card overflow-hidden">
-                    <div class="h-48 bg-gradient-to-r from-rose-400 to-pink-500"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Laser Slicer Pro</h3>
-                        <p class="text-gray-600 mb-4">Use laser beams to slice through complex geometric shapes.</p>
-                        <button class="text-blue-500 font-medium">Play Now →</button>
+                    <!-- Load More Button -->
+                    <div class="text-center mt-8">
+                        <button class="btn-secondary text-white px-6 py-3 rounded-lg font-medium">
+                            <i class="fas fa-chevron-down mr-2"></i> Load More Comments
+                        </button>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-white py-12 border-t border-gray-200">
+    <footer class="bg-apple-dark text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <div class="flex items-center space-x-2 mb-6">
-                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-pink-500 to-orange-400 flex items-center justify-center">
-                            <i class="fas fa-cut text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold logo">cutinhalf.org</h3>
-                    </div>
-                    <p class="text-gray-600 mb-6">The best place to play slicing games online. Free, fun, and endlessly challenging!</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:text-blue-500">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:text-blue-400">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:text-purple-600">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
+                    <h3 class="text-xl font-bold mb-4 logo">cutinhalf.org</h3>
+                    <p class="text-gray-400">Your premier destination for fun, casual browser games. Play anywhere, anytime!</p>
                 </div>
-                
                 <div>
-                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-600 hover:text-blue-500">Home</a></li>
-                        <li><a href="#game" class="text-gray-600 hover:text-blue-500">Play Game</a></li>
-                        <li><a href="#features" class="text-gray-600 hover:text-blue-500">Features</a></li>
-                        <li><a href="#community" class="text-gray-600 hover:text-blue-500">Community</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-blue-500">Leaderboard</a></li>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">All Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Top Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">New Games</a></li>
                     </ul>
                 </div>
-                
                 <div>
-                    <h4 class="text-lg font-semibold mb-6">More Games</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-600 hover:text-blue-500">Fruit Slicer</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-blue-500">Paper Cut Challenge</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-blue-500">Laser Slicer Pro</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-blue-500">Wood Chopper</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-blue-500">All Games</a></li>
+                    <h4 class="font-bold mb-4">Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">One Button Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">HTML5 Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Strategy Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Puzzle Games</a></li>
                     </ul>
                 </div>
-                
                 <div>
-                    <h4 class="text-lg font-semibold mb-6">Support</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-600 hover:text-blue-500">Contact Us</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-blue-500">FAQ</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-blue-500">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-blue-500">Terms of Service</a></li>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Ad Choices</a></li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-500">
-                <p>© 2023 cutinhalf.org. All rights reserved. This site is not affiliated with CrazyGames.</p>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2023 cutinhalf.org. All rights reserved. Slice Master is a trademark of CrazyGames.</p>
+                <p class="mt-2">This site is protected by reCAPTCHA and the Google <a href="#" class="text-apple-light-blue">Privacy Policy</a> and <a href="#" class="text-apple-light-blue">Terms of Service</a> apply.</p>
             </div>
         </div>
     </footer>
-    
-    <!-- Scroll to Top Button -->
-    <div class="scroll-to-top">
-        <i class="fas fa-arrow-up"></i>
+
+    <!-- AdSense Placeholder -->
+    <div class="container mx-auto px-4 mb-8">
+        <div class="bg-gradient-to-r from-blue-50 to-green-50 border-2 border-dashed border-apple-blue rounded-xl p-12 text-center">
+            <i class="fas fa-ad text-apple-blue text-4xl mb-4"></i>
+            <h3 class="text-xl font-bold text-apple-dark mb-2">AdSense Advertisement</h3>
+            <p class="text-gray-600 max-w-2xl mx-auto">This space is reserved for Google AdSense advertisements. The ads displayed here help support our free gaming site and allow us to continue providing great content.</p>
+        </div>
     </div>
-    
+
     <script>
-        // Toggle reply forms
-        document.querySelectorAll('.reply-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const form = this.closest('.forum-message').querySelector('.reply-form');
-                form.classList.toggle('active');
-            });
-        });
-        
-        // Scroll to top button
-        const scrollButton = document.querySelector('.scroll-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollButton.classList.add('visible');
-            } else {
-                scrollButton.classList.remove('visible');
-            }
-        });
-        
-        scrollButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Simulate message posting
-        const postButton = document.querySelector('.btn-primary');
-        const messageInput = document.querySelector('textarea');
-        
-        postButton.addEventListener('click', function(e) {
-            e.preventDefault();
+        // Basic profanity filter for demonstration
+        const profanityFilter = (text) => {
+            const badWords = ['badword1', 'badword2', 'insult', 'swear'];
+            let filteredText = text;
             
-            if (messageInput.value.trim() === '') {
-                messageInput.focus();
-                return;
-            }
-            
-            // Show success message
-            alert('Your message has been posted successfully! It will appear after moderation.');
-            messageInput.value = '';
-        });
-        
-        // Forum message filtering simulation
-        const badWords = ['stupid', 'idiot', 'hate', 'dumb'];
-        
-        messageInput.addEventListener('input', function() {
-            const value = this.value.toLowerCase();
             badWords.forEach(word => {
-                if (value.includes(word)) {
-                    alert('Your message contains words that may be offensive. Please rephrase.');
-                    this.value = this.value.replace(new RegExp(word, 'gi'), '****');
-                }
+                const regex = new RegExp(word, 'gi');
+                filteredText = filteredText.replace(regex, '***');
+            });
+            
+            return filteredText;
+        };
+        
+        // Forum functionality would be implemented here
+        // In a real implementation, this would connect to a backend
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Slice Master game site loaded!');
+            
+            // Fullscreen button functionality
+            const fullscreenButtons = document.querySelectorAll('[data-fullscreen]');
+            fullscreenButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const iframe = document.querySelector('.game-iframe');
+                    if (iframe.requestFullscreen) {
+                        iframe.requestFullscreen();
+                    } else if (iframe.mozRequestFullScreen) { /* Firefox */
+                        iframe.mozRequestFullScreen();
+                    } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                        iframe.webkitRequestFullscreen();
+                    } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+                        iframe.msRequestFullscreen();
+                    }
+                });
             });
         });
     </script>
